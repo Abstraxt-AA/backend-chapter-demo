@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "2b063d00-0811-4274-971e-3c7d455ef3b2",
+		"name": "Backend Chapter Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/api/user/page",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/api/customer/page",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"customer",
+						"page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"abstraxt-1\",\n    \"password\": \"demo123\",\n    \"firstName\": \"Ahmed\",\n    \"lastName\": \"Yehia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{serverIp}}/api/customer/",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"customer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"abstraxt-5\",\n    \"password\": \"demo123\",\n    \"role\": \"CUSTOMER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{serverIp}}/api/user/",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/api/customer/54930330-40e2-4b96-a4df-a12d4fecafac",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"customer",
+						"54930330-40e2-4b96-a4df-a12d4fecafac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/api/user/2c79f232-2ce7-45ca-bc57-6ce413db324d",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"2c79f232-2ce7-45ca-bc57-6ce413db324d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Ahmed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{serverIp}}/api/customer/11994a7d-fb40-45c8-a77e-802279641409",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"customer",
+						"11994a7d-fb40-45c8-a77e-802279641409"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\": \"CUSTOMER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{serverIp}}/api/user/bb972e3b-9559-4507-bc6a-e1044af5a973",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"bb972e3b-9559-4507-bc6a-e1044af5a973"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenFeign Demo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/client/feign/demo/PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"client",
+						"feign",
+						"demo",
+						"PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrofit Demo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/client/retrofit/demo/PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"client",
+						"retrofit",
+						"demo",
+						"PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export Customers CSV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/api/customer/export/csv",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"customer",
+						"export",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export Users CSV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{serverIp}}/api/user/export/csv",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"export",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Users Bulk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/abstraxt/Downloads/users.csv"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{serverIp}}/api/user/import/csv",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"import",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customers Bulk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/abstraxt/Downloads/customers.csv"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{serverIp}}/api/customer/import/csv",
+					"protocol": "http",
+					"host": [
+						"{{serverIp}}"
+					],
+					"path": [
+						"api",
+						"customer",
+						"import",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
