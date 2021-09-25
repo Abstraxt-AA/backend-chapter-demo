@@ -1,5 +1,6 @@
 package org.example.backendchapterdemo.repository.specification;
 
+import org.apache.commons.lang3.ClassUtils;
 import org.example.backendchapterdemo.dto.request.CustomerRequest;
 import org.example.backendchapterdemo.entity.Customer;
 import org.springframework.data.jpa.domain.Specification;
@@ -37,22 +38,23 @@ public class CustomerSpecification implements Specification<Customer> {
             }
         }
 
-        root.fetch("user", JoinType.LEFT);
+        if (Long.class != ClassUtils.primitiveToWrapper(criteriaQuery.getResultType()))
+            root.fetch("user", JoinType.LEFT);
         return criteriaBuilder.and(predicates.toArray(new Predicate[]{}));
     }
 
     private Specification<Customer> username(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("user").get("username"), query));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("user").get("username"), "%" + query + "%"));
     }
 
     private Specification<Customer> firstName(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("firstName"), query));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("firstName"), "%" + query + "%"));
     }
 
     private Specification<Customer> lastName(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("lastName"), query));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("lastName"), "%" + query + "%"));
     }
 }

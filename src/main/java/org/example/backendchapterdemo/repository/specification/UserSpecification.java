@@ -1,5 +1,6 @@
 package org.example.backendchapterdemo.repository.specification;
 
+import org.apache.commons.lang3.ClassUtils;
 import org.example.backendchapterdemo.dto.request.UserRequest;
 import org.example.backendchapterdemo.entity.User;
 import org.springframework.data.jpa.domain.Specification;
@@ -30,17 +31,18 @@ public class UserSpecification implements Specification<User> {
             }
         }
 
-        root.fetch("customer", JoinType.LEFT);
+        if (Long.class != ClassUtils.primitiveToWrapper(criteriaQuery.getResultType()))
+            root.fetch("customer", JoinType.LEFT);
         return criteriaBuilder.and(predicates.toArray(new Predicate[]{}));
     }
 
     private Specification<User> username(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("username"), query));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("username"), "%" + query + "%"));
     }
 
     private Specification<User> role(User.Roles query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.equal(root.get("role"), query));
+                criteriaBuilder.and(criteriaBuilder.equal(root.get("role"), "%" + query + "%"));
     }
 }
