@@ -45,16 +45,16 @@ public class CustomerSpecification implements Specification<Customer> {
 
     private Specification<Customer> username(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("user").get("username"), "%" + query + "%"));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("user").get("username"), query));
     }
 
     private Specification<Customer> firstName(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("firstName"), "%" + query + "%"));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("firstName"), query));
     }
 
     private Specification<Customer> lastName(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("lastName"), "%" + query + "%"));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("lastName"), query));
     }
 }

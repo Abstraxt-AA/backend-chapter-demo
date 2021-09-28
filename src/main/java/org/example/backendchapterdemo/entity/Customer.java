@@ -1,5 +1,6 @@
 package org.example.backendchapterdemo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,5 +23,6 @@ public class Customer {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @MapsId
     @JoinColumn(name = "user_id", columnDefinition = "uuid")
+    @JsonIgnore
     private User user;
 }

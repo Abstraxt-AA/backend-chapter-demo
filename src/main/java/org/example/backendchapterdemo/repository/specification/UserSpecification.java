@@ -38,11 +38,11 @@ public class UserSpecification implements Specification<User> {
 
     private Specification<User> username(String query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.like(root.get("username"), "%" + query + "%"));
+                criteriaBuilder.and(criteriaBuilder.like(root.get("username"), query));
     }
 
     private Specification<User> role(User.Roles query) {
         return (root, criteriaQuery, criteriaBuilder) ->
-                criteriaBuilder.and(criteriaBuilder.equal(root.get("role"), "%" + query + "%"));
+                criteriaBuilder.and(criteriaBuilder.equal(root.get("role"), query));
     }
 }
